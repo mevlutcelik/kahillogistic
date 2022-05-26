@@ -192,4 +192,146 @@ nav .links a:last-child {
   -webkit-transition: fill 0.3s;
   transition: fill 0.3s;
 }
+
+section {
+  padding: 4rem;
+}
+
+section.services {
+  padding-top: 8rem;
+}
+
+section.services .row {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin: 2rem 0;
+}
+
+section.company .row {
+  margin: 4rem 0;
+}
+
+section .section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+section .section-desc {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card {
+  background: #ffe1e1;
+  font-size: 0.875rem;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  -webkit-transition: -webkit-box-shadow 0.3s, -webkit-transform 0.3s;
+  transition: -webkit-box-shadow 0.3s, -webkit-transform 0.3s;
+  transition: box-shadow 0.3s, transform 0.3s;
+  transition: box-shadow 0.3s, transform 0.3s, -webkit-box-shadow 0.3s, -webkit-transform 0.3s;
+}
+
+.card .card-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.card:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.image-card {
+  width: 16rem;
+  height: 16rem;
+  margin-right: 2rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.image-card:last-child {
+  margin-right: 0;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.image-card .image-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  border-radius: 1rem;
+  background-color: transparent;
+  -webkit-backdrop-filter: initial;
+          backdrop-filter: initial;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.image-card .image-layer:hover {
+  -webkit-backdrop-filter: blur(0.25rem);
+          backdrop-filter: blur(0.25rem);
+  background-color: rgba(71, 19, 19, 0.75);
+}
+
+.image-card .image-layer:hover span {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.image-card .image-layer span {
+  -webkit-transform: translateY(9.5rem);
+          transform: translateY(9.5rem);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.image-round {
+  width: 6rem;
+  height: 6rem;
+}
 /*# sourceMappingURL=style.css.map */

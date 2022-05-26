@@ -139,7 +139,8 @@ nav {
         &:hover {
             background-color: #fff;
             color: #471313;
-            svg{
+
+            svg {
                 fill: #471313;
             }
         }
@@ -152,4 +153,128 @@ nav {
             transition: fill $transition-time;
         }
     }
+}
+
+// Section
+section {
+    padding: 4rem;
+
+    &.services {
+        padding-top: 8rem;
+
+        // Row
+        .row {
+            flex-wrap: nowrap;
+            margin: 2rem 0;
+        }
+
+    }
+
+    &.company {
+        .row {
+            margin: 4rem 0;
+        }
+    }
+
+    .section-title {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .section-desc {
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+
+// Row
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+// Card
+.card {
+    background: #ffe1e1;
+    font-size: 0.875rem;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    transition: box-shadow $transition-time, transform $transition-time;
+
+    .card-title {
+        font-size: 1.125rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+
+    &:hover {
+        box-shadow: none;
+        transform: scale(0.95);
+    }
+}
+
+// Image Card
+.image-card {
+    width: 16rem;
+    height: 16rem;
+    margin-right: 2rem;
+    object-fit: cover;
+    border-radius: 1rem;
+    position: relative;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .image-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        color: #fff;
+        border-radius: 1rem;
+        background-color: transparent;
+        backdrop-filter: initial;
+        transition: all $transition-time;
+        cursor: pointer;
+
+        &:hover {
+            backdrop-filter: blur(0.25rem);
+            background-color: rgba(71, 19, 19, 0.75);
+
+            span {
+                transform: translateY(0);
+            }
+        }
+
+        span {
+            transform: translateY((16rem / 2) + 1.5rem);
+            transition: all $transition-time;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+    }
+}
+
+// Image Round
+.image-round{
+    width: 6rem;
+    height: 6rem;
 }
