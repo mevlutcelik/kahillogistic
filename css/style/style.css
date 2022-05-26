@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -15,10 +15,20 @@ body {
   color: #000;
 }
 
-a, button {
+a,
+button {
   text-decoration: none;
   background-color: initial;
   color: #000;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 1rem;
   font-weight: 500;
   -webkit-transition: all 0.3s;
@@ -56,8 +66,9 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  position: relative;
 }
 
 nav .languages {
@@ -114,5 +125,71 @@ nav .links a:last-child {
       -ms-flex-pack: center;
           justify-content: center;
   height: 4rem;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 8rem 0;
+  color: #471313;
+  background: #ffe1e1;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ffe1e1));
+  background: linear-gradient(180deg, #fff, #ffe1e1);
+  position: relative;
+}
+
+.header .header-title {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.header .header-desc {
+  font-size: 1rem;
+  font-weight: 500;
+  max-width: 40rem;
+  text-align: center;
+}
+
+.header .mx-phone-button {
+  position: absolute;
+  height: 4rem;
+  padding: 0 1.125rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  bottom: -2rem;
+  background-color: #471313;
+  color: #fff;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.header .mx-phone-button:hover {
+  background-color: #fff;
+  color: #471313;
+}
+
+.header .mx-phone-button:hover svg {
+  fill: #471313;
+}
+
+.header .mx-phone-button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1.5rem;
+  fill: #fff;
+  -webkit-transition: fill 0.3s;
+  transition: fill 0.3s;
 }
 /*# sourceMappingURL=style.css.map */

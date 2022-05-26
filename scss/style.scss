@@ -1,5 +1,5 @@
 // Import Font
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 // Variables
 $font-family: 'Poppins', system-ui, sans-serif;
@@ -21,10 +21,14 @@ body {
     color: #000;
 }
 
-a,button{
+a,
+button {
     text-decoration: none;
     background-color: initial;
     color: #000;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1rem;
     font-weight: 500;
     transition: all $transition-time;
@@ -49,7 +53,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    position: relative;
 
     .languages {
         display: flex;
@@ -59,7 +64,7 @@ nav {
         a {
             margin-right: 1rem;
 
-            &:hover{
+            &:hover {
                 color: #ff0000;
             }
 
@@ -76,7 +81,7 @@ nav {
         a {
             margin-right: 1rem;
 
-            &:hover{
+            &:hover {
                 color: #ff0000;
             }
 
@@ -93,4 +98,58 @@ nav {
     align-items: center;
     justify-content: center;
     height: 4rem;
+}
+
+// Header
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 0;
+    color: #471313;
+    background: #ffe1e1;
+    background: linear-gradient(180deg, #fff, #ffe1e1);
+    position: relative;
+
+    .header-title {
+        font-size: 4rem;
+        font-weight: 600;
+    }
+
+    .header-desc {
+        font-size: 1rem;
+        font-weight: 500;
+        max-width: 40rem;
+        text-align: center;
+    }
+
+    .mx-phone-button {
+        position: absolute;
+        height: 4rem;
+        padding: 0 1.125rem;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        bottom: -2rem;
+        background-color: #471313;
+        color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+        &:hover {
+            background-color: #fff;
+            color: #471313;
+            svg{
+                fill: #471313;
+            }
+        }
+
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 1.5rem;
+            fill: #fff;
+            transition: fill $transition-time;
+        }
+    }
 }
