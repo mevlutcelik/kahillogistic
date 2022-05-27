@@ -125,17 +125,17 @@ switch($lang){
         <p class="section-desc"><?= $str["section-facilities-desc"] ?></p>
         <div class="row">
             <div class="image-round">
-                <img src="https://www.kahillogistic.com/images/cover5.jpg" alt="Cover 5">
+                <img src="/images/cover5.webp" alt="Cover 5">
                 <div class="image-header"><?= $str["image-round-1-header"] ?></div>
                 <div class="image-text"><?= $str["image-round-1-text"] ?></div>
             </div>
             <div class="image-round">
-                <img src="https://www.kahillogistic.com/images/cover6.jpg" alt="Cover 6">
+                <img src="/images/cover6.webp" alt="Cover 6">
                 <div class="image-header"><?= $str["image-round-2-header"] ?></div>
                 <div class="image-text"><?= $str["image-round-2-text"] ?></div>
             </div>
             <div class="image-round">
-                <img src="https://www.kahillogistic.com/images/cover7.jpg" alt="Cover 7">
+                <img src="/images/cover7.webp" alt="Cover 7">
                 <div class="image-header"><?= $str["image-round-3-header"] ?></div>
                 <div class="image-text"><?= $str["image-round-3-text"] ?></div>
             </div>

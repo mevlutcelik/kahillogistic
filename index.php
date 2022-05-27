@@ -108,15 +108,15 @@ switch($lang){
         <p class="section-desc"><?= $str["section-company-desc"] ?></p>
         <div class="row">
             <div class="image-card">
-                <img src="https://www.kahillogistic.com/images/company1.jpg" alt="Company 1">
+                <img src="/images/company1.webp" alt="Company 1">
                 <div class="image-layer"><span><?= $str["istanbul"] ?></span></div>
             </div>
             <div class="image-card">
-                <img src="https://www.kahillogistic.com/images/company2.jpg" alt="Company 2">
+                <img src="/images/company2.webp" alt="Company 2">
                 <div class="image-layer"><span><?= $str["ankara"] ?></span></div>
             </div>
             <div class="image-card">
-                <img src="https://www.kahillogistic.com/images/company3.jpg" alt="Company 3">
+                <img src="/images/company3.webp" alt="Company 3">
                 <div class="image-layer"><span><?= $str["mersin"] ?></span></div>
             </div>
         </div>
@@ -144,17 +144,17 @@ switch($lang){
         <p class="section-desc"><?= $str["section-facilities-desc"] ?></p>
         <div class="row">
             <div class="image-round">
-                <img src="https://www.kahillogistic.com/images/cover5.jpg" alt="Cover 5">
+                <img src="/images/cover5.webp" alt="Cover 5">
                 <div class="image-header"><?= $str["image-round-1-header"] ?></div>
                 <div class="image-text"><?= $str["image-round-1-text"] ?></div>
             </div>
             <div class="image-round">
-                <img src="https://www.kahillogistic.com/images/cover6.jpg" alt="Cover 6">
+                <img src="/images/cover6.webp" alt="Cover 6">
                 <div class="image-header"><?= $str["image-round-2-header"] ?></div>
                 <div class="image-text"><?= $str["image-round-2-text"] ?></div>
             </div>
             <div class="image-round">
-                <img src="https://www.kahillogistic.com/images/cover7.jpg" alt="Cover 7">
+                <img src="/images/cover7.webp" alt="Cover 7">
                 <div class="image-header"><?= $str["image-round-3-header"] ?></div>
                 <div class="image-text"><?= $str["image-round-3-text"] ?></div>
             </div>
@@ -166,7 +166,7 @@ switch($lang){
         <div class="row">
             <div class="comment">
                 <div class="user-image">
-                    <img src="https://www.kahillogistic.com/images/user1.jpg" alt="User 1">
+                    <img src="/images/user1.webp" alt="User 1">
                 </div>
                 <div>
                     <div class="user-name">
@@ -199,7 +199,7 @@ switch($lang){
             </div>
             <div class="comment">
                 <div class="user-image">
-                    <img src="https://www.kahillogistic.com/images/user2.jpg" alt="User 2">
+                    <img src="/images/user2.webp" alt="User 2">
                 </div>
                 <div>
                     <div class="user-name">

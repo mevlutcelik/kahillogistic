@@ -109,7 +109,7 @@ switch($lang){
             <a title="<?= $str["section-about-us-button-text"] ?>" <?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "href=\"/services.php?lang=$lang\"" : "services.php" ?>><?= $str["section-about-us-button-text"] ?></a>
         </div>
         <div class="about-col image">
-            <img src="https://www.kahillogistic.com/images/about.jpg" alt="<?= $str["about"] ?>">
+            <img src="/images/about.webp" alt="<?= $str["about"] ?>">
         </div>
     </section>
     <footer>
