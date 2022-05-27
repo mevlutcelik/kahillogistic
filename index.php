@@ -103,24 +103,6 @@ switch($lang){
             </a>
         </div>
     </header>
-    <section class="company">
-        <h2 class="section-title"><?= $str["section-company-header"] ?></h2>
-        <p class="section-desc"><?= $str["section-company-desc"] ?></p>
-        <div class="row">
-            <div class="image-card">
-                <img src="/images/company1.webp" alt="Company 1">
-                <div class="image-layer"><span><?= $str["istanbul"] ?></span></div>
-            </div>
-            <div class="image-card">
-                <img src="/images/company2.webp" alt="Company 2">
-                <div class="image-layer"><span><?= $str["ankara"] ?></span></div>
-            </div>
-            <div class="image-card">
-                <img src="/images/company3.webp" alt="Company 3">
-                <div class="image-layer"><span><?= $str["mersin"] ?></span></div>
-            </div>
-        </div>
-    </section>
     <section class="services">
         <h2 class="section-title"><?= $str["section-services-header"] ?></h2>
         <p class="section-desc"><?= $str["section-services-desc"] ?></p>
