@@ -11,6 +11,16 @@ function controleScroll() {
 // Döküman hazır olduktan sonra yapılacak işlemler
 document.addEventListener('DOMContentLoaded', function (e) {
     controleScroll();
+    let mxPhoneButton = document.querySelector('.mx-phone-button');
+    mxPhoneButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        let tel = mxPhoneButton.getAttribute('data-tel');
+        if (typeof (gtag_report_conversion !== 'undefined')) {
+            gtag_report_conversion('tel:' + tel);
+        } else {
+            window.location.href = 'tel:' + tel;
+        }
+    });
 });
 
 // Scroll olunca navigasyona gölge ekleme

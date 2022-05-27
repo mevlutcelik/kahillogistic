@@ -25,16 +25,75 @@ switch($lang){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $str["title"] ?></title>
+    <link rel="icon" href="/images/logo.webp">
     <link rel="stylesheet" href="/css/style.min.css">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-230113688-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-230113688-1');
+    </script>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Ads: 10864954171 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10864954171"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'AW-10864954171');
+    </script>
+
+
+
+    <!-- Event snippet for Telefon conversion page
+    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+    function gtag_report_conversion(url) {
+        var callback = function() {
+            if (typeof(url) != 'undefined') {
+                window.location = url;
+            }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-10864954171/SGqSCIGu78ADELuW6Lwo',
+            'event_callback': callback
+        });
+        return false;
+    }
+    </script>
+
+
+
     <?php
     if($lang === "ar"){
         ?>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600&display=swap');
-            *{font-family: 'Noto Sans Arabic', system-ui, sans-serif;text-align: right;}
-            .footer-desc{text-align: right !important;}
-        </style>
-        <?php
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600&display=swap');
+
+    * {
+        font-family: 'Noto Sans Arabic', system-ui, sans-serif;
+        text-align: right;
+    }
+
+    .footer-desc {
+        text-align: right !important;
+    }
+    </style>
+    <?php
     }
     ?>
 </head>
@@ -56,14 +115,19 @@ switch($lang){
         </div>
         <div class="link-title"><?= $str["pages"] ?></div>
         <div class="links">
-            <a title="<?= $str["home"] ?>" class="active" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/?lang=$lang" : "/index.php" ?>"><?= $str["home"] ?></a>
-            <a title="<?= $str["about"] ?>" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/about.php?lang=$lang" : "/about.php" ?>"><?= $str["about"] ?></a>
-            <a title="<?= $str["services"] ?>" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/services.php?lang=$lang" : "/services.php" ?>"><?= $str["services"] ?></a>
+            <a title="<?= $str["home"] ?>" class="active"
+                href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/?lang=$lang" : "/index.php" ?>"><?= $str["home"] ?></a>
+            <a title="<?= $str["about"] ?>"
+                href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/about.php?lang=$lang" : "/about.php" ?>"><?= $str["about"] ?></a>
+            <a title="<?= $str["services"] ?>"
+                href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/services.php?lang=$lang" : "/services.php" ?>"><?= $str["services"] ?></a>
         </div>
     </div>
     <nav>
         <div class="flex">
-            <a title="<?= $str["title"] ?>" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/?lang=$lang" : "/index.php" ?>" class="logo">
+            <a title="<?= $str["title"] ?>"
+                href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/?lang=$lang" : "/index.php" ?>"
+                class="logo">
                 <img src="/images/logo.webp" alt="<?= $str["title"] ?>">
             </a>
             <div class="languages">
@@ -74,9 +138,12 @@ switch($lang){
         </div>
         <div>
             <div class="links">
-            <a title="<?= $str["home"] ?>" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/?lang=$lang" : "/index.php" ?>"><?= $str["home"] ?></a>
-            <a title="<?= $str["about"] ?>" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/about.php?lang=$lang" : "/about.php" ?>"><?= $str["about"] ?></a>
-            <a title="<?= $str["services"] ?>" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/services.php?lang=$lang" : "/services.php" ?>"><?= $str["services"] ?></a>
+                <a title="<?= $str["home"] ?>"
+                    href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/?lang=$lang" : "/index.php" ?>"><?= $str["home"] ?></a>
+                <a title="<?= $str["about"] ?>"
+                    href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/about.php?lang=$lang" : "/about.php" ?>"><?= $str["about"] ?></a>
+                <a title="<?= $str["services"] ?>"
+                    href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/services.php?lang=$lang" : "/services.php" ?>"><?= $str["services"] ?></a>
             </div>
             <button role="button" class="side-button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -90,7 +157,7 @@ switch($lang){
         <div class="header">
             <h1 class="header-title"><?= $str["header-title"] ?></h1>
             <p class="header-desc"><?= $str["header-desc"] ?></p>
-            <a title="<?= $str["call-me-now"] ?>" href="tel:<?= $phone ?>" class="mx-phone-button">
+            <a title="<?= $str["call-me-now"] ?>" data-tel="<?= $phone ?>" class="mx-phone-button">
                 <img src="/images/marwah-e1650023155749.webp" alt="Marwah Kahil" />
                 <div class="icon-and-span-item">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -212,7 +279,7 @@ switch($lang){
     </section>
     <section class="cta">
         <h3 class="cta-text"><?= $str["cta-text"] ?></h3>
-        <a title="<?= $str["cta-button-text"] ?>" href="tel:<?= $phone ?>"><?= $str["cta-button-text"] ?></a>
+        <a title="<?= $str["cta-button-text"] ?>" data-tel="<?= $phone ?>"><?= $str["cta-button-text"] ?></a>
     </section>
     <footer>
         <div class="footer-title"><?= $str["footer-header"] ?></div>
@@ -226,6 +293,20 @@ switch($lang){
         </a>
     </footer>
     <script src="/js/script.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function(e) {
+        let ctaButton = document.querySelector('.cta a');
+        ctaButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            let tel = ctaButton.getAttribute('data-tel');
+            if (typeof(gtag_report_conversion !== 'undefined')) {
+                gtag_report_conversion('tel:' + tel);
+            } else {
+                window.location.href = 'tel:' + tel;
+            }
+        });
+    });
+    </script>
 </body>
 
 </html>
