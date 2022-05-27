@@ -5,6 +5,12 @@
 $font-family: 'Poppins', system-ui, sans-serif;
 $transition-time: 0.3s;
 
+// Colors
+$colors-value: 153;
+$color-primary-dark: hsl($colors-value, 100%, 18%);
+$color-primary-dark-opc: hsla($colors-value, 100%, 18%, 0.75);
+$color-primary-light: hsl($colors-value, 47%, 96%);
+
 // Reset Css
 * {
     margin: 0;
@@ -65,7 +71,7 @@ nav {
             margin-right: 1rem;
 
             &:hover {
-                color: #ff0000;
+                color: $color-primary-dark;
             }
 
             &:last-child {
@@ -82,7 +88,7 @@ nav {
             margin-right: 1rem;
 
             &:hover {
-                color: #ff0000;
+                color: $color-primary-dark;
             }
 
             &:last-child {
@@ -107,9 +113,9 @@ nav {
     align-items: center;
     justify-content: center;
     padding: 8rem 0;
-    color: #471313;
+    color: $color-primary-dark;
     background: #ffe1e1;
-    background: linear-gradient(180deg, #fff, #ffe1e1);
+    background: linear-gradient(180deg, #fff, $color-primary-light);
     position: relative;
 
     .header-title {
@@ -126,23 +132,24 @@ nav {
 
     .mx-phone-button {
         position: absolute;
-        height: 4rem;
-        padding: 0 1.125rem;
+        height: 5rem;
+        padding: 0 2rem 0 0;
         border-radius: 0.5rem;
-        font-size: 1rem;
+        font-size: 1.25rem;
         font-weight: 500;
         bottom: -2rem;
-        background-color: #471313;
+        background-color: $color-primary-dark;
         color: #fff;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 
-        &:hover {
-            background-color: #fff;
-            color: #471313;
+        img{
+            height: 5rem;
+            border-radius: 0.5rem 0 0 0.5rem;
+            margin-right: 2rem;
+        }
 
-            svg {
-                fill: #471313;
-            }
+        &:hover {
+            transform: scale(0.95);
         }
 
         svg {
@@ -199,7 +206,7 @@ section {
 
 // Card
 .card {
-    background: #ffe1e1;
+    background: $color-primary-light;
     font-size: 0.875rem;
     padding: 2rem;
     margin: 1rem;
@@ -257,7 +264,7 @@ section {
 
         &:hover {
             backdrop-filter: blur(0.25rem);
-            background-color: rgba(71, 19, 19, 0.75);
+            background-color: $color-primary-dark-opc;
 
             span {
                 transform: translateY(0);
@@ -274,7 +281,7 @@ section {
 }
 
 // Image Round
-.image-round{
+.image-round {
     width: 6rem;
     height: 6rem;
 }

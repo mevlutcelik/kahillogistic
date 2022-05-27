@@ -86,7 +86,7 @@ nav .languages a {
 }
 
 nav .languages a:hover {
-  color: #ff0000;
+  color: #005c32;
 }
 
 nav .languages a:last-child {
@@ -107,7 +107,7 @@ nav .links a {
 }
 
 nav .links a:hover {
-  color: #ff0000;
+  color: #005c32;
 }
 
 nav .links a:last-child {
@@ -142,10 +142,10 @@ nav .links a:last-child {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 8rem 0;
-  color: #471313;
+  color: #005c32;
   background: #ffe1e1;
-  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ffe1e1));
-  background: linear-gradient(180deg, #fff, #ffe1e1);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f0faf5));
+  background: linear-gradient(180deg, #fff, #f0faf5);
   position: relative;
 }
 
@@ -163,25 +163,27 @@ nav .links a:last-child {
 
 .header .mx-phone-button {
   position: absolute;
-  height: 4rem;
-  padding: 0 1.125rem;
+  height: 5rem;
+  padding: 0 2rem 0 0;
   border-radius: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 500;
   bottom: -2rem;
-  background-color: #471313;
+  background-color: #005c32;
   color: #fff;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
-.header .mx-phone-button:hover {
-  background-color: #fff;
-  color: #471313;
+.header .mx-phone-button img {
+  height: 5rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+  margin-right: 2rem;
 }
 
-.header .mx-phone-button:hover svg {
-  fill: #471313;
+.header .mx-phone-button:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 .header .mx-phone-button svg {
@@ -238,7 +240,7 @@ section .section-desc {
 }
 
 .card {
-  background: #ffe1e1;
+  background: #f0faf5;
   font-size: 0.875rem;
   padding: 2rem;
   margin: 1rem;
@@ -313,7 +315,7 @@ section .section-desc {
 .image-card .image-layer:hover {
   -webkit-backdrop-filter: blur(0.25rem);
           backdrop-filter: blur(0.25rem);
-  background-color: rgba(71, 19, 19, 0.75);
+  background-color: rgba(0, 92, 50, 0.75);
 }
 
 .image-card .image-layer:hover span {
