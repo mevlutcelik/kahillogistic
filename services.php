@@ -56,14 +56,14 @@ switch($lang){
         </div>
         <div class="link-title"><?= $str["pages"] ?></div>
         <div class="links">
-            <a title="<?= $str["home"] ?>" class="active" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/?lang=$lang" : "/index.php" ?>"><?= $str["home"] ?></a>
+            <a title="<?= $str["home"] ?>" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/?lang=$lang" : "/index.php" ?>"><?= $str["home"] ?></a>
             <a title="<?= $str["about"] ?>" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/about.php?lang=$lang" : "/about.php" ?>"><?= $str["about"] ?></a>
-            <a title="<?= $str["services"] ?>" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/services.php?lang=$lang" : "/services.php" ?>"><?= $str["services"] ?></a>
+            <a title="<?= $str["services"] ?>" class="active" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/services.php?lang=$lang" : "/services.php" ?>"><?= $str["services"] ?></a>
         </div>
     </div>
     <nav>
         <div class="flex">
-            <a title="<?= $str["title"] ?>" href="#!" class="logo">
+            <a title="<?= $str["title"] ?>" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/?lang=$lang" : "/index.php" ?>" class="logo">
                 <img src="/images/logo.webp" alt="<?= $str["title"] ?>">
             </a>
             <div class="languages">

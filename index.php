@@ -63,7 +63,7 @@ switch($lang){
     </div>
     <nav>
         <div class="flex">
-            <a title="<?= $str["title"] ?>" href="#!" class="logo">
+            <a title="<?= $str["title"] ?>" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/?lang=$lang" : "/index.php" ?>" class="logo">
                 <img src="/images/logo.webp" alt="<?= $str["title"] ?>">
             </a>
             <div class="languages">

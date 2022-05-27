@@ -63,7 +63,7 @@ switch($lang){
     </div>
     <nav>
         <div class="flex">
-            <a title="<?= $str["title"] ?>" href="#!" class="logo">
+            <a title="<?= $str["title"] ?>" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/?lang=$lang" : "/index.php" ?>" class="logo">
                 <img src="/images/logo.webp" alt="<?= $str["title"] ?>">
             </a>
             <div class="languages">
@@ -106,7 +106,7 @@ switch($lang){
         <div class="about-col">
             <h2 class="section-title"><?= $str["section-about-us-header"] ?></h2>
             <p class="section-desc"><?= $str["section-about-us-text"] ?></p>
-            <a title="<?= $str["section-about-us-button-text"] ?>" <?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "href=\"/services.php?lang=$lang\"" : "services.php" ?>><?= $str["section-about-us-button-text"] ?></a>
+            <a title="<?= $str["section-about-us-button-text"] ?>" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/services.php?lang=$lang" : "/services.php" ?>"><?= $str["section-about-us-button-text"] ?></a>
         </div>
         <div class="about-col image">
             <img src="/images/about.webp" alt="<?= $str["about"] ?>">
