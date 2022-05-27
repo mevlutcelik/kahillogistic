@@ -9,7 +9,7 @@ $transition-time: 0.3s;
 $colors-value: 153;
 $color-primary-dark: hsl($colors-value, 100%, 18%);
 $color-primary-dark-opc: hsla($colors-value, 100%, 18%, 0.75);
-$color-primary-light: hsl($colors-value, 50%, 97%);
+$color-primary-light: hsl($colors-value, 50%, 94%);
 
 // Reset Css
 * {
@@ -25,6 +25,10 @@ html,
 body {
     background-color: #fff;
     color: #000;
+
+    &.side-bar-open {
+        overflow: hidden;
+    }
 }
 
 a,
@@ -86,6 +90,7 @@ nav {
 
             &:hover {
                 color: $color-primary-dark;
+                text-decoration: underline;
             }
 
             &:last-child {
@@ -103,6 +108,7 @@ nav {
 
             &:hover {
                 color: $color-primary-dark;
+                text-decoration: underline;
             }
 
             &:last-child {
@@ -135,6 +141,9 @@ nav {
     .header-title {
         font-size: 3rem;
         font-weight: 600;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        transition: font-size $transition-time;
     }
 
     .header-desc {
@@ -142,6 +151,7 @@ nav {
         font-weight: 500;
         max-width: 40rem;
         text-align: center;
+        margin: 0 1rem;
         color: #000;
     }
 
@@ -157,15 +167,22 @@ nav {
         color: #fff;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 
+        .icon-and-span-item{
+            display: flex;
+            align-items: center;
+        }
+
         img {
             height: 5rem;
             border-radius: 0.5rem 0 0 0.5rem;
             margin-right: 2rem;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+            transition: all $transition-time;
         }
 
         &:hover {
             transform: scale(0.95);
+            animation: none;
         }
 
         svg {
@@ -182,7 +199,7 @@ nav {
 section {
     padding: 4rem;
 
-    &.company{
+    &.company {
         margin-top: 8rem;
     }
 
@@ -206,7 +223,7 @@ section {
     .section-desc {
         font-size: 1rem;
         text-align: center;
-        margin-bottom: 2rem;
+        margin: 0 1rem 2rem;
     }
 
     &.testimonials {
@@ -224,7 +241,7 @@ section {
 // Row
 .row {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     margin-top: 4rem;
@@ -261,6 +278,7 @@ section {
     border-radius: 1rem;
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    transition: all $transition-time;
 
     &:last-child {
         margin-right: 0;
@@ -356,16 +374,17 @@ section {
     user-select: none;
     transition: all $transition-time;
 
-    &:hover{
+    &:hover {
         background-color: #121212;
     }
 
-    .stars{
+    .stars {
         display: flex;
         align-items: center;
         justify-content: flex-start;
         margin: 0.5rem 0 0.5rem 0.5rem;
-        svg{
+
+        svg {
             width: 0.875rem;
             height: 0.875rem;
             fill: orange;
@@ -387,21 +406,21 @@ section {
         }
     }
 
-    .user-name{
+    .user-name {
         font-size: 1.125rem;
         font-weight: 600;
         display: flex;
         align-items: center;
     }
 
-    .comment-text{
+    .comment-text {
         font-size: 0.875rem;
         color: rgba(255, 255, 255, 0.7);
     }
 }
 
 // Cta
-.cta{
+.cta {
     width: 100%;
     padding: 8rem 0;
     display: flex;
@@ -410,16 +429,19 @@ section {
     flex-direction: column;
     color: #fff;
     background-color: $color-primary-dark;
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(https://www.kahillogistic.com/images/cover8.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://www.kahillogistic.com/images/cover8.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     font-size: 1.75rem;
-    .cta-text{
+
+    .cta-text {
         text-align: center;
         max-width: 30rem;
     }
-    button, a{
+
+    button,
+    a {
         margin-top: 2rem;
         color: #fff;
         border: 1px solid #fff;
@@ -427,14 +449,15 @@ section {
         padding: 0.5rem 0.75rem;
         font-size: 1rem;
         font-weight: 600;
-        &:hover{
+
+        &:hover {
             background-color: #fff;
             color: #000;
         }
     }
 }
 
-footer{
+footer {
     background-color: #fff;
     color: #000;
     display: flex;
@@ -442,30 +465,145 @@ footer{
     justify-content: center;
     flex-direction: column;
     padding: 8rem 0 4rem;
-    .footer-title{
+
+    .footer-title {
         font-size: 2rem;
         font-weight: 600;
         text-align: center;
         margin-bottom: 1rem;
     }
-    .footer-desc{
+
+    .footer-desc {
         padding: 0 1rem;
         max-width: 74rem;
         text-align: left;
     }
-    .linkedin{
+
+    .linkedin {
         margin-top: 2rem;
         background-color: #0A66C2;
         color: #fff;
         padding: 0.5rem;
         border-radius: 0.25rem;
-        &:hover{
+
+        &:hover {
             border-radius: 50%;
         }
-        svg{
+
+        svg {
             width: 1rem;
             height: 1rem;
             fill: #fff;
         }
     }
 }
+
+.side-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 16rem;
+    height: 100%;
+    background: #fff;
+    z-index: 3;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    z-index: 3;
+    transform: translateX(20rem);
+    transition: all $transition-time;
+
+    &.active{
+        transform: translateX(0);
+    }
+
+    .close-button {
+        width: 1.75rem;
+        height: 1.75rem;
+        border: none;
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+        border-radius: 50%;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #005c32;
+        svg{
+            fill: currentColor;
+            width: 1.125rem;
+            height: 1.125rem;
+        }
+    }
+
+    .link-title {
+        width: 100%;
+
+        &.first {
+            margin-top: 3rem;
+        }
+
+        padding: 1rem 2rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+    .links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 4rem;
+
+        a {
+            &:first-child {
+                border-top: 1px solid rgba(0, 0, 0, 0.05);
+            }
+
+            &.active {
+                background-color: $color-primary-light;
+                color: $color-primary-dark;
+            }
+
+            width: 100%;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+    }
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(0.5rem);
+    z-index: 2;
+    &.active{
+        display: block;
+    }
+}
+
+.side-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    display: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    svg{
+        fill: currentColor;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+@import 'media';

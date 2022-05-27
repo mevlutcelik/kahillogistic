@@ -1,0 +1,185 @@
+@media all and (max-width: 1024px) {
+
+    nav {
+        padding: 0 3rem;
+    }
+
+    .image-card,
+    .image-round {
+        width: calc(100% / 3);
+        height: 23vw;
+    }
+
+    .services {
+        .row {
+            flex-wrap: wrap !important;
+        }
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .comment {
+        flex-direction: column;
+        align-items: center;
+
+        .user-image {
+            margin-bottom: 1rem;
+        }
+
+        .user-name,
+        .comment-text {
+            justify-content: center;
+            text-align: center;
+        }
+    }
+
+    .mx-phone-button {
+        font-size: 1rem !important;
+        height: 4.5rem !important;
+
+        svg {
+            width: 1.25rem !important;
+            height: 1.25rem !important;
+        }
+
+        img {
+            height: 4.5rem !important;
+        }
+    }
+    .cta{
+        font-size: 1.5rem;
+    }
+}
+
+@media all and (max-width: 768px) {
+    nav {
+        padding: 0 2rem;
+
+        .languages,
+        .links {
+            display: none;
+        }
+
+        .side-button {
+            display: flex;
+        }
+    }
+
+    .header-title {
+        font-size: 2rem !important;
+        margin: 0 2rem;
+    }
+
+    .header-desc {
+        font-size: 0.875rem !important;
+        max-width: 30rem !important;
+    }
+    .cta{
+        font-size: 1.25rem;
+        .cta-text{
+            max-width: 25rem;
+        }
+    }
+    footer{
+        .footer-desc{
+            font-size: 0.875rem;
+        }
+        padding-bottom: 9rem;
+    }
+}
+
+@media all and (max-width: 480px) {
+
+    nav {
+        padding: 0 1rem;
+    }
+
+    .header{
+        padding: 4rem 0;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    .company,
+    .facilities {
+        .row {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .image-card,
+    .image-round {
+        width: 80%;
+        height: 18rem;
+        margin-right: 0;
+    }
+
+    .image-card {
+        margin-bottom: 2rem;
+    }
+
+    .image-round {
+        margin-bottom: 12rem;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    .testimonials {
+        .row {
+            flex-direction: column;
+
+            .comment {
+                width: 80%;
+                margin-right: 0;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    .mx-phone-button {
+        position: fixed !important;
+        bottom: 1rem !important;
+        font-size: 0.875rem !important;
+        height: 4.5rem !important;
+        justify-content: flex-start !important;
+        padding: 0 !important;
+
+        .icon-and-span-item {
+            justify-content: center;
+            width: 100%;
+        }
+
+        width: 90%;
+        z-index: 1;
+
+        svg {
+            width: 1.25rem !important;
+            height: 1.25rem !important;
+        }
+
+        img {
+            height: 4.5rem !important;
+            margin-right: 0 !important;
+        }
+    }
+    .cta{
+        font-size: 1.125rem;
+        .cta-text{
+            max-width: 20rem;
+        }
+    }
+}
+
+@media all and (max-width: 320px) {
+    .mx-phone-button {
+        svg {
+            display: none;
+        }
+    }
+}

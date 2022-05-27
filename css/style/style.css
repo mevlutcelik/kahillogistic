@@ -15,6 +15,11 @@ body {
   color: #000;
 }
 
+html.side-bar-open,
+body.side-bar-open {
+  overflow: hidden;
+}
+
 a,
 button {
   text-decoration: none;
@@ -103,6 +108,7 @@ nav .languages a {
 
 nav .languages a:hover {
   color: #005c32;
+  text-decoration: underline;
 }
 
 nav .languages a:last-child {
@@ -124,6 +130,7 @@ nav .links a {
 
 nav .links a:hover {
   color: #005c32;
+  text-decoration: underline;
 }
 
 nav .links a:last-child {
@@ -160,14 +167,18 @@ nav .links a:last-child {
   padding: 8rem 0;
   color: #005c32;
   background: #ffe1e1;
-  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f4fbf8));
-  background: linear-gradient(180deg, #fff, #f4fbf8);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e8f7f0));
+  background: linear-gradient(180deg, #fff, #e8f7f0);
   position: relative;
 }
 
 .header .header-title {
   font-size: 3rem;
   font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  -webkit-transition: font-size 0.3s;
+  transition: font-size 0.3s;
 }
 
 .header .header-desc {
@@ -175,6 +186,7 @@ nav .links a:last-child {
   font-weight: 500;
   max-width: 40rem;
   text-align: center;
+  margin: 0 1rem;
   color: #000;
 }
 
@@ -192,17 +204,30 @@ nav .links a:last-child {
           box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
+.header .mx-phone-button .icon-and-span-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .header .mx-phone-button img {
   height: 5rem;
   border-radius: 0.5rem 0 0 0.5rem;
   margin-right: 2rem;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .header .mx-phone-button:hover {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
+  -webkit-animation: none;
+          animation: none;
 }
 
 .header .mx-phone-button svg {
@@ -238,7 +263,7 @@ section .section-title {
 section .section-desc {
   font-size: 1rem;
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 0 1rem 2rem;
 }
 
 section.testimonials {
@@ -256,8 +281,8 @@ section.testimonials .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -268,7 +293,7 @@ section.testimonials .row {
 }
 
 .card {
-  background: #f4fbf8;
+  background: #e8f7f0;
   font-size: 0.875rem;
   padding: 2rem;
   margin: 1rem;
@@ -304,6 +329,8 @@ section.testimonials .row {
   position: relative;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .image-card:last-child {
@@ -509,7 +536,8 @@ section.testimonials .row {
   max-width: 30rem;
 }
 
-.cta button, .cta a {
+.cta button,
+.cta a {
   margin-top: 2rem;
   color: #fff;
   border: 1px solid #fff;
@@ -519,7 +547,8 @@ section.testimonials .row {
   font-weight: 600;
 }
 
-.cta button:hover, .cta a:hover {
+.cta button:hover,
+.cta a:hover {
   background-color: #fff;
   color: #000;
 }
@@ -572,5 +601,321 @@ footer .linkedin svg {
   width: 1rem;
   height: 1rem;
   fill: #fff;
+}
+
+.side-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 16rem;
+  height: 100%;
+  background: #fff;
+  z-index: 3;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem 0;
+  z-index: 3;
+  -webkit-transform: translateX(20rem);
+          transform: translateX(20rem);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.side-nav.active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.side-nav .close-button {
+  width: 1.75rem;
+  height: 1.75rem;
+  border: none;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  border-radius: 50%;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #005c32;
+}
+
+.side-nav .close-button svg {
+  fill: currentColor;
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.side-nav .link-title {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.side-nav .link-title.first {
+  margin-top: 3rem;
+}
+
+.side-nav .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.side-nav .links a {
+  width: 100%;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.side-nav .links a:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.side-nav .links a.active {
+  background-color: #e8f7f0;
+  color: #005c32;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  z-index: 2;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.side-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 0;
+  display: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.side-button svg {
+  fill: currentColor;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media all and (max-width: 1024px) {
+  nav {
+    padding: 0 3rem;
+  }
+  .image-card,
+  .image-round {
+    width: calc(100% / 3);
+    height: 23vw;
+  }
+  .services .row {
+    -ms-flex-wrap: wrap !important;
+        flex-wrap: wrap !important;
+  }
+  .card {
+    width: 100%;
+  }
+  .comment {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .comment .user-image {
+    margin-bottom: 1rem;
+  }
+  .comment .user-name,
+  .comment .comment-text {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+  .mx-phone-button {
+    font-size: 1rem !important;
+    height: 4.5rem !important;
+  }
+  .mx-phone-button svg {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+  }
+  .mx-phone-button img {
+    height: 4.5rem !important;
+  }
+  .cta {
+    font-size: 1.5rem;
+  }
+}
+
+@media all and (max-width: 768px) {
+  nav {
+    padding: 0 2rem;
+  }
+  nav .languages,
+  nav .links {
+    display: none;
+  }
+  nav .side-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header-title {
+    font-size: 2rem !important;
+    margin: 0 2rem;
+  }
+  .header-desc {
+    font-size: 0.875rem !important;
+    max-width: 30rem !important;
+  }
+  .cta {
+    font-size: 1.25rem;
+  }
+  .cta .cta-text {
+    max-width: 25rem;
+  }
+  footer {
+    padding-bottom: 9rem;
+  }
+  footer .footer-desc {
+    font-size: 0.875rem;
+  }
+}
+
+@media all and (max-width: 480px) {
+  nav {
+    padding: 0 1rem;
+  }
+  .header {
+    padding: 4rem 0;
+  }
+  section {
+    padding: 1rem;
+  }
+  .company .row,
+  .facilities .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .image-card,
+  .image-round {
+    width: 80%;
+    height: 18rem;
+    margin-right: 0;
+  }
+  .image-card {
+    margin-bottom: 2rem;
+  }
+  .image-round {
+    margin-bottom: 12rem;
+  }
+  .image-round:last-child {
+    margin-bottom: 0;
+  }
+  .testimonials .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .testimonials .row .comment {
+    width: 80%;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+  .mx-phone-button {
+    position: fixed !important;
+    bottom: 1rem !important;
+    font-size: 0.875rem !important;
+    height: 4.5rem !important;
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: flex-start !important;
+    padding: 0 !important;
+    width: 90%;
+    z-index: 1;
+  }
+  .mx-phone-button .icon-and-span-item {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+  .mx-phone-button svg {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+  }
+  .mx-phone-button img {
+    height: 4.5rem !important;
+    margin-right: 0 !important;
+  }
+  .cta {
+    font-size: 1.125rem;
+  }
+  .cta .cta-text {
+    max-width: 20rem;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .mx-phone-button svg {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
