@@ -206,7 +206,8 @@ section.services {
 section.services .row {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  margin: 2rem 0;
+  margin: 2rem auto;
+  max-width: 70rem;
 }
 
 section.company .row {
@@ -267,8 +268,8 @@ section .section-desc {
 }
 
 .image-card {
-  width: 16rem;
-  height: 16rem;
+  width: 21rem;
+  height: 18rem;
   margin-right: 2rem;
   -o-object-fit: cover;
      object-fit: cover;
@@ -333,7 +334,7 @@ section .section-desc {
 }
 
 .image-round {
-  width: 6rem;
-  height: 6rem;
+  width: 8rem;
+  height: 8rem;
 }
 /*# sourceMappingURL=style.css.map */
