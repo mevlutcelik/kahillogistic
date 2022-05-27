@@ -51,6 +51,23 @@
     .cta{
         font-size: 1.5rem;
     }
+    .about-us{
+        flex-direction: column;
+        .section-title{
+            font-size: 1.5rem;
+        }
+        .section-desc{
+            margin: 0 0 2rem !important;
+        }
+        .about-col{
+            a,button{
+                margin-bottom: 4rem;
+            }
+            &.image{
+                width: 100% !important;
+            }
+        }
+    }
 }
 
 @media all and (max-width: 768px) {
@@ -76,11 +93,26 @@
         font-size: 0.875rem !important;
         max-width: 30rem !important;
     }
+    .testimonials {
+        .row {
+            flex-direction: column;
+
+            .comment {
+                width: 80%;
+                margin-right: 0;
+                margin-bottom: 2rem;
+            }
+        }
+    }
     .cta{
         font-size: 1.25rem;
         .cta-text{
             max-width: 25rem;
         }
+    }
+    .about-us,.services.services-page{
+        padding: 0 4rem !important;
+        margin: 8rem 0 4rem !important;
     }
     footer{
         .footer-desc{
@@ -130,18 +162,6 @@
         }
     }
 
-    .testimonials {
-        .row {
-            flex-direction: column;
-
-            .comment {
-                width: 80%;
-                margin-right: 0;
-                margin-bottom: 2rem;
-            }
-        }
-    }
-
     .mx-phone-button {
         position: fixed !important;
         bottom: 1rem !important;
@@ -173,6 +193,9 @@
         .cta-text{
             max-width: 20rem;
         }
+    }
+    .about-us, .services.services-page{
+        margin: 4rem 0 2rem !important;
     }
 }
 

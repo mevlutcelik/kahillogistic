@@ -1,12 +1,42 @@
+<?php
+
+$phone = "5307628300";
+$formattedPhone = '0 (' . substr($phone, 0, 3) . ') ' . substr($phone, 3, 3) . ' ' . substr($phone, 6, 2) . ' ' . substr($phone, 8, 2);
+$phone = "+90" . $phone;
+
+$lang = @$_GET["lang"];
+switch($lang){
+    case "tr":
+        require "lang/tr.php";
+        break;
+    case "ar":
+        require "lang/ar.php";
+        break;
+    default:
+        require "lang/en.php";
+        break;
+}
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?= $str["lang"] ?>" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kahil Logistic</title>
+    <title><?= $str["title"] ?></title>
     <link rel="stylesheet" href="/css/style.min.css">
+    <?php
+    if($lang === "ar"){
+        ?>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600&display=swap');
+            *{font-family: 'Noto Sans Arabic', system-ui, sans-serif;text-align: right;}
+            .footer-desc{text-align: right !important;}
+        </style>
+        <?php
+    }
+    ?>
 </head>
 
 <body>
@@ -18,35 +48,35 @@
                     d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" />
             </svg>
         </button>
-        <div class="link-title first">Select language</div>
+        <div class="link-title first"><?= $str["select-language"] ?></div>
         <div class="links">
-            <a title="English" class="active" href="/index.html">English</a>
-            <a title="العربية" href="/index-ar.html">العربية</a>
-            <a title="Türkçe" href="/index-tr.html">Türkçe</a>
+            <a title="English" href="/">English</a>
+            <a title="العربية" href="/?lang=ar">العربية</a>
+            <a title="Türkçe" href="/?lang=tr">Türkçe</a>
         </div>
-        <div class="link-title">Pages</div>
+        <div class="link-title"><?= $str["pages"] ?></div>
         <div class="links">
-            <a title="Home" class="active" href="/index.html">Home</a>
-            <a title="About" href="#!">About</a>
-            <a title="Services" href="#!">Services</a>
+            <a title="<?= $str["home"] ?>" class="active" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/?lang=$lang" : "/index.php" ?>"><?= $str["home"] ?></a>
+            <a title="<?= $str["about"] ?>" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/about.php?lang=$lang" : "/about.php" ?>"><?= $str["about"] ?></a>
+            <a title="<?= $str["services"] ?>" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/services.php?lang=$lang" : "/services.php" ?>"><?= $str["services"] ?></a>
         </div>
     </div>
     <nav>
         <div class="flex">
-            <a title="Kahil Logistic" href="#!" class="logo">
-                <img src="/images/logo.webp" alt="Kahil Logistic">
+            <a title="<?= $str["title"] ?>" href="#!" class="logo">
+                <img src="/images/logo.webp" alt="<?= $str["title"] ?>">
             </a>
             <div class="languages">
-                <a title="English" href="/index.html">English</a>
-                <a title="العربية" href="/index-ar.html">العربية</a>
-                <a title="Türkçe" href="/index-tr.html">Türkçe</a>
+                <a title="English" href="/">English</a>
+                <a title="العربية" href="/?lang=ar">العربية</a>
+                <a title="Türkçe" href="/?lang=tr">Türkçe</a>
             </div>
         </div>
         <div>
             <div class="links">
-                <a title="Home" href="/index.html">Home</a>
-                <a title="About" href="#!">About</a>
-                <a title="Services" href="#!">Services</a>
+            <a title="<?= $str["home"] ?>" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/?lang=$lang" : "/index.php" ?>"><?= $str["home"] ?></a>
+            <a title="<?= $str["about"] ?>" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/about.php?lang=$lang" : "/about.php" ?>"><?= $str["about"] ?></a>
+            <a title="<?= $str["services"] ?>" href="<?= ($lang === 'en' || $lang === 'tr' || $lang === 'ar') ? "/services.php?lang=$lang" : "/services.php" ?>"><?= $str["services"] ?></a>
             </div>
             <button role="button" class="side-button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -58,10 +88,9 @@
     </nav>
     <header>
         <div class="header">
-            <h1 class="header-title">Kahil Logistic Company</h1>
-            <p class="header-desc">Instant Solution to All Your Logistics Needs. The most reasonable price. Save Time
-                and Compare. Call Me Now!</p>
-            <a title="Call Me Now!" href="tel:+905307628300" class="mx-phone-button">
+            <h1 class="header-title"><?= $str["header-title"] ?></h1>
+            <p class="header-desc"><?= $str["header-desc"] ?></p>
+            <a title="<?= $str["call-me-now"] ?>" href="tel:<?= $phone ?>" class="mx-phone-button">
                 <img src="/images/marwah-e1650023155749.webp" alt="Marwah Kahil" />
                 <div class="icon-and-span-item">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -69,85 +98,71 @@
                             d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z">
                         </path>
                     </svg>
-                    <span>0 (850) 762 8300</span>
+                    <span><?= $formattedPhone ?></span>
                 </div>
             </a>
         </div>
     </header>
     <section class="company">
-        <h2 class="section-title">Our Company Branches</h2>
-        <p class="section-desc">XPO Logistics is a global shipping and contract logistics services organization with
-            over 1,530 sites in over 30 countries.</p>
+        <h2 class="section-title"><?= $str["section-company-header"] ?></h2>
+        <p class="section-desc"><?= $str["section-company-desc"] ?></p>
         <div class="row">
             <div class="image-card">
                 <img src="https://www.kahillogistic.com/images/company1.jpg" alt="Company 1">
-                <div class="image-layer"><span>Istanbul</span></div>
+                <div class="image-layer"><span><?= $str["istanbul"] ?></span></div>
             </div>
             <div class="image-card">
-                <img src="https://www.kahillogistic.com/images/company2.jpg" alt="Company 1">
-                <div class="image-layer"><span>Ankara</span></div>
+                <img src="https://www.kahillogistic.com/images/company2.jpg" alt="Company 2">
+                <div class="image-layer"><span><?= $str["ankara"] ?></span></div>
             </div>
             <div class="image-card">
-                <img src="https://www.kahillogistic.com/images/company3.jpg" alt="Company 1">
-                <div class="image-layer"><span>Mersin</span></div>
+                <img src="https://www.kahillogistic.com/images/company3.jpg" alt="Company 3">
+                <div class="image-layer"><span><?= $str["mersin"] ?></span></div>
             </div>
         </div>
     </section>
     <section class="services">
-        <h2 class="section-title">Services We Offer</h2>
-        <p class="section-desc">This is the point where the logistics providers come to the rescue.</p>
+        <h2 class="section-title"><?= $str["section-services-header"] ?></h2>
+        <p class="section-desc"><?= $str["section-services-desc"] ?></p>
         <div class="row">
             <div class="card">
-                <div class="card-title">Warehousing services</div>
-                <div class="card-desc">The product is typically held at a warehouse or is consecutively transported
-                    through various warehouses before it is shipped. Many companies prefer their warehouses; whereas
-                    many companies work hand in hand with third-party logistics service providers. They tend to receive
-                    ship and store out products on behalf of their clients.</div>
+                <div class="card-title"><?= $str["card-1-header"] ?></div>
+                <div class="card-desc"><?= $str["card-1-text"] ?></div>
             </div>
             <div class="card">
-                <div class="card-title">Warehousing services</div>
-                <div class="card-desc">The product is typically held at a warehouse or is consecutively transported
-                    through various warehouses before it is shipped. Many companies prefer their warehouses; whereas
-                    many companies work hand in hand with third-party logistics service providers. They tend to receive
-                    ship and store out products on behalf of their clients.</div>
+                <div class="card-title"><?= $str["card-2-header"] ?></div>
+                <div class="card-desc"><?= $str["card-2-text"] ?></div>
             </div>
             <div class="card">
-                <div class="card-title">Warehousing services</div>
-                <div class="card-desc">The product is typically held at a warehouse or is consecutively transported
-                    through various warehouses before it is shipped. Many companies prefer their warehouses; whereas
-                    many companies work hand in hand with third-party logistics service providers. They tend to receive
-                    ship and store out products on behalf of their clients.</div>
+                <div class="card-title"><?= $str["card-3-header"] ?></div>
+                <div class="card-desc"><?= $str["card-3-text"] ?></div>
             </div>
         </div>
     </section>
     <section class="facilities">
-        <h2 class="section-title">Our Facilities</h2>
-        <p class="section-desc">The objective of the typology is to distinguish logistics facilities according to
-            their activities.</p>
+        <h2 class="section-title"><?= $str["section-facilities-header"] ?></h2>
+        <p class="section-desc"><?= $str["section-facilities-desc"] ?></p>
         <div class="row">
             <div class="image-round">
                 <img src="https://www.kahillogistic.com/images/cover5.jpg" alt="Cover 5">
-                <div class="image-header">Post-purchase Services</div>
-                <div class="image-text">The objective of the typology is to distinguish logistics facilities according
-                    to their activities.</div>
+                <div class="image-header"><?= $str["image-round-1-header"] ?></div>
+                <div class="image-text"><?= $str["image-round-1-text"] ?></div>
             </div>
             <div class="image-round">
-                <img src="https://www.kahillogistic.com/images/cover6.jpg" alt="Cover 5">
-                <div class="image-header">Largest port services</div>
-                <div class="image-text">The objective of the typology is to distinguish logistics facilities according
-                    to their activities.</div>
+                <img src="https://www.kahillogistic.com/images/cover6.jpg" alt="Cover 6">
+                <div class="image-header"><?= $str["image-round-2-header"] ?></div>
+                <div class="image-text"><?= $str["image-round-2-text"] ?></div>
             </div>
             <div class="image-round">
-                <img src="https://www.kahillogistic.com/images/cover7.jpg" alt="Cover 5">
-                <div class="image-header">Fast Shipping Anywhere</div>
-                <div class="image-text">The objective of the typology is to distinguish logistics facilities according
-                    to their activities.</div>
+                <img src="https://www.kahillogistic.com/images/cover7.jpg" alt="Cover 7">
+                <div class="image-header"><?= $str["image-round-3-header"] ?></div>
+                <div class="image-text"><?= $str["image-round-3-text"] ?></div>
             </div>
         </div>
     </section>
     <section class="testimonials">
-        <h2 class="section-title">What Our Clinets Says</h2>
-        <p class="section-desc">We belive what our clients say...</p>
+        <h2 class="section-title"><?= $str["section-testimonials-header"] ?></h2>
+        <p class="section-desc"><?= $str["section-testimonials-desc"] ?></p>
         <div class="row">
             <div class="comment">
                 <div class="user-image">
@@ -155,7 +170,7 @@
                 </div>
                 <div>
                     <div class="user-name">
-                        <span>Hadel Alqadii</span>
+                        <span><?= $str["user-1-name"] ?></span>
                         <div class="stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                                 <path
@@ -179,11 +194,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="comment-text">Start day work first off all security guard check attendance and
-                        information
-                        take to head office then check warehouse cleaners and workers report to head office after then
-                        one
-                        round check to warehouse</div>
+                    <div class="comment-text"><?= $str["user-1-text"] ?></div>
                 </div>
             </div>
             <div class="comment">
@@ -192,7 +203,7 @@
                 </div>
                 <div>
                     <div class="user-name">
-                        <span>Salem Alselwi</span>
+                        <span><?= $str["user-2-name"] ?></span>
                         <div class="stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                                 <path
@@ -212,25 +223,18 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="comment-text">Start day work first off all security guard check attendance and
-                        information
-                        take to head office then check warehouse cleaners and workers report to head office after then
-                        one
-                        round check to warehouse</div>
+                    <div class="comment-text"><?= $str["user-2-text"] ?></div>
                 </div>
             </div>
         </div>
     </section>
     <section class="cta">
-        <h3 class="cta-text">Be One Of Our Clients Anywhere From The World</h3>
-        <a href="tel:+905307628300">Contact Us</a>
+        <h3 class="cta-text"><?= $str["cta-text"] ?></h3>
+        <a title="<?= $str["cta-button-text"] ?>" href="tel:<?= $phone ?>"><?= $str["cta-button-text"] ?></a>
     </section>
     <footer>
-        <div class="footer-title">About Us</div>
-        <div class="footer-desc">Kahil Logistics has completed the acquisition of the majority of Ingram Micro’s
-            Commerce & Lifecycle
-            Services (CLS) business. With our combined business, we are in our strongest position ever
-            and we continue down a successful path to become a Top 5 global logistics player.</div>
+        <div class="footer-title"><?= $str["footer-header"] ?></div>
+        <div class="footer-desc"><?= $str["footer-text"] ?></div>
         <a class="linkedin" href="https://www.linkedin.com/in/marwah-kahil">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path
